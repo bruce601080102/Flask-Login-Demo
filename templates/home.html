@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>帕金森症電腦輔助偵測系統網頁</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favicons -->
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
+  <link rel="stylesheet" href ="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href ="{{ url_for('static', filename='custom-responsive-style.css') }}">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+
+  <script src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='all-plugins.js') }}"></script>
+  <script src="{{ url_for('static', filename='plugin-active.js') }}"></script>
+
+
+</head>
+
+<body>
+  <!-- Header starts here -->
+  <header id="Header">
+    <nav class="main-navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="logo">
+              <a href="#"><img src="images/Logo.png" alt="Logo"></a>
+            </div>
+          </div>
+          <div class="col text-right">
+            <div class="menu-wrap">
+              <div id="nav-icon1">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#HeroBanner" class="smooth-scroll">帕金森症電腦輔助偵測系</a></li>
+        <li><a href="#Gain" class="smooth-scroll">首頁</a></li>
+        <li><a href="#Laptop" class="smooth-scroll">疾病症狀</a></li>
+        <li><a href="#Video" class="smooth-scroll">關於帕金森氏症</a></li>
+        <li><a href="#OurWork" class="smooth-scroll">巴金森簡易自我評估量表</a></li>
+        <li><a href="#ContactUs" class="smooth-scroll">聯繫我們</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- Header ends here -->
+  <!-- Banner starts here -->
+  <section id="HeroBanner">
+    <div id="BannerSlider" class="owl-carousel">
+      <div class="item">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="banner-text">
+                <h1>歡迎使用<br /> 帕金森診斷平台 </h1>
+                <p> 提供民眾與相關醫療人員一個快速了解帕金森症的資訊網頁醫療訊息的平台。
+                  <br />有任何問題歡迎聯繫我們</p>
+                <div class="bannet-cta">
+                  <div class="um-form">      
+                  <div class="cta-1">
+                    <a href="/login">登入帳號</a>
+                    <!-- <a href="https://51f6266af0f8.ngrok.io/login">登入帳號</a> -->
+                  </div>
+                  <div class="cta-2">
+                    <a href="#">忘記密碼</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- Banner ends here -->
+  <!-- Features section starts here -->
+  <section id="Gain">
+    <div class="container">
+      <div class="title text-center">
+        <h3>關於帕金森氏症</h3>
+        <p>帕金森氏症 (Parkinson's disease) 屬於運動神經系統失調的疾病，是最常見的神經病變之一
+        <br/>帕金森氏症使患者產生運動症狀和非運動症狀，後者包括自主神經系統功能異常、神經精神疾患（包括情緒、認知、行為和思想改變）、感覺和睡眠障礙等。</p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+          <div class="each-icon box-1">
+            <div class="icon-wrap">
+              <i>00</i>
+            </div>
+            <div class="icon-text">
+              <h3>原發性或自發性帕金森氏症</h3>
+              <p>帕金森氏症（Parkinson's disease，簡稱PD）是一種影響中樞神經系統的慢性神經退化疾病，主要影響運動神經系統。</p>
+              <div class="cta">
+                <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+          <div class="each-icon box-2">
+            <div class="icon-wrap">
+              <i>11</i>
+            </div>
+            <div class="icon-text">
+              <h3>運動症狀</h3>
+              <p>帕金森氏症有四種主要運動症狀：顫抖、肢體僵硬、動作遲緩、姿態不穩</p>
+              <div class="cta">
+                <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+          <div class="each-icon box-3">
+            <div class="icon-wrap">
+              <i>22</i>
+            </div>
+            <div class="icon-text">
+              <h3>神經性精神疾患</h3>
+              <p>帕金森氏症可能導致輕度到重度的神經性精神疾患，包括言語、認知、情緒、行為和思考混亂。</p>
+              <div class="cta">
+                <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+          <div class="each-icon box-4">
+            <div class="icon-wrap">
+              <i>33</i>
+            </div>
+            <div class="icon-text">
+              <h3>其他症狀</h3>
+              <p>睡眠障礙也是一種可能的帕金森氏症症狀，治療用的藥物可能會惡化相關問題。患者會有嗜睡、快速動眼期中斷、失眠等現象，一份系統性回顧報告顯示13.0%服用多巴胺藥物的帕金森氏症患者都有睡眠問題。</p>
+              <div class="cta">
+                <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features section ends here -->
+  <!-- Laptop section starts here -->
+  <section id="Laptop">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="laptop-text">
+            <h2>帕金森氏症的病程變化<br class="d-none d-lg-none d-xl-block" /> 第0期到第5期</h2>
+            <p>第零期-無明顯帕金森氏症的症狀。</p>
+            <p>第一期-單側肢體顫抖，可觀察手部是否有不自然的抖動狀況。</p>
+            <p>第二期-症狀開始蔓延至兩側肢體。</p>
+            <p>第三期-症狀開始蔓延至兩側肢體。患者尚能自理生活，但平衡感與行動能力已受影響。</p>
+            <p>第四期-症狀開始蔓延至兩側肢體。患者需要他人攙扶才可行動。</p>
+            <p>第五期-症狀開始蔓延至兩側肢體。患者幾乎需要全日仰賴輪椅，或者長期臥床無法行動。</p>
+            <a href="read.html">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Laptop section ends here -->
+  <!-- video section starts here -->
+  <section id="Video">
+    <div class="image-wrap">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/video1.jpg">
+        <img src="images/video.jpg" alt="Video Thumbnail">
+      </picture>
+    </div>
+    <div class="video-icon">
+      <h3>帕金森症電腦輔助偵測系統</h3>
+      <p>本研究透過開發計算大腦灰質及白質比例與紋狀體容積之電腦輔助偵測系統，
+        <br class="d-none d-lg-none d-xl-block" />透過影像處理技術分析帕金森氏症的嚴重程度依據初步研究並分期。</p>
+      <a class="popup-youtube-wst" href="https://www.youtube.com/watch?v=ScMzIvxBSi4"><i class="fas fa-play"></i></a>
+    </div>
+  </section>
+  <!-- video section ends here -->
+  <section id="OurWork" class="clearfix">
+    <div class="container">
+      <div class="title text-center">
+        <h3>帕金森相關協會</h3>
+        <p>整合宣導巴金森氏症的正確醫療資訊，提供一起創造更好的生活品質。</p>
+      </div>
+    </div>
+    <div class="filter-list">
+      <ul>
+        <li class="active" data-filter="all">全部
+        </li>
+      </ul>
+    </div>
+    <div class="filter-box clearfix">
+      <div class="each-box all scale-anm branding">
+        <div class="each-box-img">
+          <img src="images/category-1.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>臺大醫院帕金森症暨動作障礙中心</h3>
+            <p>提升帕金森氏症的醫療與照護</p>
+            <a title="Read More" href="http://www.pdcenterntuh.org.tw/ContentAspx/Browser00.aspx?isClass=1&setTable=1&type=1" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm marketing web-design">
+        <div class="each-box-img">
+          <img src="images/category-2.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>台灣動作障礙學會</h3>
+            <p>致力接軌世界級動作障礙學</br>之醫學教育研究與醫療照護水準</p>
+            <a title="Read More" href="http://www.tmds.org.tw/" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm media">
+        <div class="each-box-img">
+          <img src="images/category-3.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>台灣鬱金香動作障礙關懷學會</h3>
+            <p>增進社會各界對巴金森病的瞭解</br>及提昇對患者長期照護的心靈</p>
+            <a title="Read More" href="http://www.twtulipmov.com.tw/" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm photography marketing">
+        <div class="each-box-img">
+          <img src="images/category-4.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>社團法人高雄市聰動成長協會</h3>
+            <p>【聰‧動】的概念：「聰」，寄望失智症病友能聰明；「動」，期待帕金森氏症病友能動；</br>期待社會大眾與我們一起「用您的聰明，成就我們的行動」。</p>
+            <a title="Read More" href="http://www.smartaction.org.tw/" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm web-design branding">
+        <div class="each-box-img">
+          <img src="images/category-5.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>台灣帕金森之友協會</h3>
+            <p>建構台灣全國性及非營利性的巴金森症病友協會</br>提供醫療諮詢與協助</p>
+            <a title="Read More" href="http://www.pdcare.org.tw/home" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm web-design">
+        <div class="each-box-img">
+          <img src="images/category-9.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>中華民國老人福利推動聯盟</h3>
+            <p>打造台灣成為一個健康、快樂、有尊嚴的「老人福利國」。</p>
+            <a title="Read More" href="http://www.oldpeople.org.tw/Default.asp" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm media branding">
+        <div class="each-box-img">
+          <img src="images/category-7.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <a title="Read More" href="https://www.parkinson.org/" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm photography marketing">
+        <div class="each-box-img">
+          <img src="images/category-8.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <a title="Read More" href="https://www.worldpdcoalition.org/default.aspx" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="each-box all scale-anm photography media">
+        <div class="each-box-img">
+          <img src="images/category-6.jpg" alt="">
+        </div>
+        <div class="each-box-text-wap">
+          <div class="each-box-text">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <a title="Read More" href="https://nwpf.org/" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact us section starts here -->
+  <section id="ContactUs">
+    <div class="container contact-container">
+      <h3 class="contact-title">聯繫我們</h3>
+      <div class="contact-outer-wrapper">
+        <div class="form-wrap">
+          <p>若有問題，便可聯繫</p>
+          <form action="#" method="post">
+            <div class="fname floating-label">
+              <input type="text" required class="floating-input" name="full name" />
+              <label for="title">姓名</label>
+            </div>
+            <div class="email floating-label">
+              <input type="email" required class="floating-input" name="email" />
+              <label for="email">電子郵件</label>
+            </div>
+            <div class="contact floating-label">
+              <input type="tel" class="floating-input" name="contact" />
+              <label for="email" required>聯繫方式</label>
+            </div>
+            <div class="company floating-label">
+              <input type="text" class="floating-input" name="company" />
+              <label for="email">公司</label>
+            </div>
+            <div class="user-msg floating-label">
+              <textarea type="text" class="floating-input" name="Message"></textarea>
+              <label for="message" class="msg-label">留言訊息</label>
+            </div>
+            <div class="submit-btn">
+              <button type="submit">提交</button>
+            </div>
+          </form>
+        </div>
+        <div class="address-block">
+          <p class="add-title">聯繫資訊</p>
+          <div class="c-detail">
+            <div class="c-icon"><i class="fas fa-address-book" aria-hidden="true"></i></div>
+            <div class="c-info">
+              <h4>地址</h4>
+              <p>中原大學</p>
+            </div>
+          </div>
+          <div class="c-detail">
+            <div class="c-icon"><i class="fas fa-phone-square" aria-hidden="true"></i></div>
+            <div class="c-info">
+              <h4>連絡電話</h4>
+              <p><a href="tell:+1234567890">+1234567890</a></p>
+            </div>
+          </div>
+          <div class="c-detail">
+            <div class="c-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="c-info">
+              <h4>電子郵件</h4>
+              <p><a href="mailto:abc@abc.com">abc@abc.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact us section ends here -->
+  <!-- Footer section starts here -->
+  <footer id="Footer">
+    <div class="container text-center">
+      <div class="footer-text ">
+        <p>訂閱資訊
+          <br class="hidden-lg-down" /> 分享有關帕金森資訊</p>
+        <div class="email-box">
+          <form action="#" method="post">
+            <input required type="email">
+            <label for="email">電子郵件</label>
+            <input class="submit" type="submit" value="">
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="copy-right">
+              <p>© 帕金森症電腦輔助偵測系統</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-right">
+            <div class="social-share">
+              <ul>
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-pinterest"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="designed">Designed by NIC</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer section ends here -->
+</body>
+
+</html>

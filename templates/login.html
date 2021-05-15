@@ -1,0 +1,111 @@
+<script src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://127.0.0.1:5000/">HOME</a></li>
+                <!-- <li><a href="https://51f6266af0f8.ngrok.io">HOME</a></li> -->
+                <li><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+
+<div class="container" align="center" style="width:50%">
+
+    <form class="form-signin" action="/login" method="POST">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <br>
+
+        <label for="inputemail" class="sr-only">Email address</label>
+        <input type="email" id="inputemail" name="inputemail" class="form-control" placeholder="Email address" required autofocus>
+        <p></p>
+        <label for="inputpassword" class="sr-only">Password</label>
+        <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required>
+
+        <br /><br />
+
+        <div class="form-group  required">
+
+            <div class="row">
+                <div class="col-xs-2">
+                    <img src="" class="vc_image" id="vc_image" onclick="javascript:fresh_vc();">
+                </div>
+
+                <div class="col-xs-2">
+                    <input class="form-control" name="verificationCode" required="" type="text" value="" placeholder="captcha">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+
+        <div>
+            <button class="btn btn-danger" type="submit">Sign in</button>
+            <a class="btn btn-success" href="http://127.0.0.1:5000/">Home</a>
+
+
+        </div>
+    </form>
+
+    <div class="col-xs-5">
+        <img src="" class="vc_image" id="vc_image" onclick="javascript:fresh_vc();">
+    </div>
+    <br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    {% if category == "bad" %}
+    <div class="alert alert-danger">
+        <strong>Error:</strong> {{ message }}
+    </div>
+    {% endif %}
+    {% if category == "ok" %}
+    <div class="alert alert-success">
+        <strong>OK:</strong> {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% endblock %}
+
+    <script>
+        function fresh_vc() {
+            $.get('/get_vc', function(data) {
+                $('#vc_image').attr('src', data);
+            })
+        }
+
+        fresh_vc();
+    </script>

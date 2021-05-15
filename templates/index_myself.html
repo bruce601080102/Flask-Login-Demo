@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登入頁面</title>
+    <script type="text/javascript">
+
+	
+	
+	
+	
+      function do_ajax() {
+        var req = new XMLHttpRequest();
+        var result = document.getElementById('result');
+        req.onreadystatechange = function()
+        {
+          if(this.readyState == 4 && this.status == 200) {
+			if (this.responseText=='登入成功'){
+				window.location.replace("http://127.0.0.1:5000/success")
+			}
+
+            result.innerHTML = this.responseText;
+          } else {
+            result.innerHTML = "loading...";
+          }
+        }
+
+        req.open('POST', '/login', true);
+        req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+		const formData = new FormData();
+		formData.append('account', document.getElementById('account').value); 
+		formData.append('password', document.getElementById('password').value);
+		
+		var object = {};
+		formData.forEach(function(value, key){
+			object[key] = value;
+		});
+		
+		const json = JSON.stringify(object);		
+        req.send("name=" + json);
+      }
+    </script>
+  </head>
+  <body>
+    <form action="index" method="post">
+      <label>Account:<input type="text" id="account" value="" /></label>
+	  <label>Password:<input type="text" id="password" value="" /></label>
+      <button type="button" id="btn-post" onclick="do_ajax();">Click</button>
+      <div id="result"></div>
+    </form>
+  </body>
+</html>

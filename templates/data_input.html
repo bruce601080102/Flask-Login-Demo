@@ -1,0 +1,101 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated Link</a></li>
+                <li><a href="#">Another Separated Link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/data_input">填寫資料</a></li>
+            <li><a href="/data_pandas">資料瀏覽</a></li>
+            <li><a href="/logout">Logout<span class="sr-only">(current)</span></a></li>
+	          <li><a href="../navbar-fixed-top/">{{ username }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        
+      <form action="index" method="post">
+        <label>名字:&emsp;<input type="text" id="name" value="" /></label>
+        <br>
+        <label>年齡:&emsp;<input type="text" id="age" value="" /></label>
+        <br>
+        <label>電話:&emsp;<input type="text" id="phone" value="" /></label>
+        <br>
+        <button type="button" id="btn-post" onclick="do_ajax();">SAVE</button>
+        <br>
+        <div id="result"></div>
+      </form>
+      
+      
+      
+      <script>
+        function do_ajax() {
+          const req = new XMLHttpRequest();
+          var result = document.getElementById('result');
+          req.onreadystatechange = function()
+          {
+            if(this.readyState == 4 && this.status == 200) {
+      
+              var response = JSON.parse(this.responseText)
+              var button = response.button;
+              result.innerHTML = button;
+            } else {
+              result.innerHTML = "您已儲存過相同的姓名，如要修改請按下修改案件";
+            }
+          }
+      
+          const formData = new FormData();
+          formData.append('name', document.getElementById('name').value);
+          formData.append('age', document.getElementById("age").value);
+          formData.append('phone', document.getElementById("phone").value);
+          
+      
+      
+          var object = {};
+          formData.forEach(function(value, key) {
+              object[key] = value;
+          });
+          const json1 = JSON.stringify(object);
+      
+          req.open('POST', 'http://127.0.0.1:5000/sql', true);
+          req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+          req.send("name=" + json1);
+      }
+      </script>
+
+    </div>
+{% endblock %}
+
+
