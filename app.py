@@ -265,7 +265,12 @@ def data_pandas():
         pd_df = execute_pandas(db_name,'record','pk_id',session_pk_id)
         if len(pd_df) >0:
             pd_df.columns = ['id','pk_id','name','age','phone']
-            return render_template('data_pandas.html',username= list(username[2])[0], tables=[pd_df.to_html(classes='data')], titles=pd_df.columns.values)
+            ID = pd_df.iloc[-1]["id"]
+            name = pd_df.iloc[-1]["name"]
+            age = pd_df.iloc[-1]["age"]
+            phone = pd_df.iloc[-1]["phone"]
+            # return render_template('data_pandas.html',username= list(username[2])[0], tables=[pd_df.to_html(classes='data')], titles=pd_df.columns.values)
+            return render_template('data_pandas.html',ID=ID , name=name , age=age , phone=phone)
         else:
             return render_template('data_pandas_nan.html',username= list(username[2])[0])
     return render_template('login.html')

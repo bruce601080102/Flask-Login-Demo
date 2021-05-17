@@ -1,6 +1,17 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}This is an example page{% endblock %}
 
+<script>
+  function downloadAsFile(csv, fileName) {
+    var file = new File([csv], fileName, { type: "text/csv" })
+    var anUrl = window.URL.createObjectURL(file)
+    var a = window.document.createElement('a');
+    a.href = window.URL.createObjectURL(file)
+    a.download = fileName;
+    a.click();
+  }
+</script>
+
 {% block navbar %}
 
 <nav class="navbar navbar-default navbar-static-top">
@@ -40,21 +51,60 @@
         </div>
       </div>
     </nav>
-{% endblock %}
-
-{% block content %}
-    <div class="container">
-
-        
-    {% for table in tables %}
-      {{titles[loop.index]}}
-      {{ table|safe }}
-    {% endfor %}
-      
-      
 
 
+
+    <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        overflow:hidden;padding:8px 5px;word-break:normal;}
+      .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:8px 5px;word-break:normal;}
+      .tg .tg-wlv8{background-color:#cce6ff;border-color:inherit;text-align:center;vertical-align:top}
+      .tg .tg-mfhl{background-color:#ffffc7;border-color:inherit;text-align:center;vertical-align:top}
+      </style>
+      <div class="container" align="center" style="width:50%">
+      <table class="tg" style="undefined;table-layout: fixed; width: 505px">
+      <colgroup>
+      <col style="width: 42px">
+      <col style="width: 182px">
+      <col style="width: 281px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="tg-wlv8">項目</th>
+          <th class="tg-wlv8">4大模</th>
+          <th class="tg-wlv8">欄位(大類)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-mfhl">1</td>
+          <td class="tg-mfhl">ID</td>
+          <td class="tg-mfhl">{{ID}}</td>
+        </tr>
+        <tr>
+          <td class="tg-mfhl">2</td>
+          <td class="tg-mfhl">name</td>
+          <td class="tg-mfhl">{{name}}</td>
+        </tr>
+        <tr>
+          <td class="tg-mfhl">3</td>
+          <td class="tg-mfhl">age</td>
+          <td class="tg-mfhl">{{age}}</td>
+        </tr>
+        <tr>
+          <td class="tg-mfhl">4</td>
+          <td class="tg-mfhl">phone</td>
+          <td class="tg-mfhl">{{phone}}</td>
+        </tr>
+      </tbody>
+      </table>
     </div>
+
+
 {% endblock %}
+
+
 
 
