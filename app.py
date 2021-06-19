@@ -291,5 +291,9 @@ def webmanifest (filename):
     return send_from_directory('images/favicons',filename)
 
 
+@app.route("/data/<filename>")
+def emgu (filename):
+    return send_from_directory('static',filename)
+
 if __name__ == "__main__":
     app.run()
